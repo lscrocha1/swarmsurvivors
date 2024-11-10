@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmlqwyjbqu5u"]
+[gd_scene load_steps=11 format=3 uid="uid://cmlqwyjbqu5u"]
 
 [ext_resource type="PackedScene" uid="uid://kjx4sem04asc" path="res://scenes/player.tscn" id="1_ea166"]
 [ext_resource type="PackedScene" uid="uid://djs6n1tduqryb" path="res://scenes/enemy.tscn" id="2_cc7oi"]
+[ext_resource type="PackedScene" uid="uid://plfaslbskf7s" path="res://scenes/game_manager.tscn" id="3_l8hbo"]
+[ext_resource type="PackedScene" uid="uid://bajxl10t3lfhq" path="res://scenes/game_over_screen.tscn" id="4_1d1yq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_op72b"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,4 +53,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3839, -2.15374)
 transform = Transform3D(1, 0, 0, 0, 0.885337, 0.46495, 0, -0.46495, 0.885337, 0, 16.681, 23.3173)
 
 [node name="Enemy" parent="." instance=ExtResource("2_cc7oi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9587, 2.50539, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.772, 1, -6.251)
+
+[node name="GameManager" parent="." instance=ExtResource("3_l8hbo")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("4_1d1yq")]
+unique_name_in_owner = true
+visible = false

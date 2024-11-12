@@ -6,15 +6,16 @@ class_name Player
 
 const SPEED = 50.0
 const JUMP_VELOCITY = 4.5
-var health = 100
+var HEALTH = 100
+var IS_GOD_MODE_ON = true
 
 signal died()
 
 func _ready():
-	health_bar.set_value(health)
+	health_bar.set_value(HEALTH)
 
 func _physics_process(delta: float) -> void:
-	if health > 0:
+	if HEALTH > 0:
 		_move_player(delta)
 
 func _move_player(delta: float) -> void:
@@ -36,9 +37,12 @@ func _move_player(delta: float) -> void:
 	move_and_slide()
 
 func apply_damage(damage: int) -> void:
-	health -= damage
+	if IS_GOD_MODE_ON:
+		return
+		
+	HEALTH -= damage
 	
-	health_bar.set_value(health)
+	health_bar.set_value(HEALTH)
 	
-	if health <= 0:
+	if HEALTH <= 0:
 		emit_signal("died")

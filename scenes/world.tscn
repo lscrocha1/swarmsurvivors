@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmlqwyjbqu5u"]
+[gd_scene load_steps=12 format=3 uid="uid://cmlqwyjbqu5u"]
 
 [ext_resource type="PackedScene" uid="uid://kjx4sem04asc" path="res://scenes/player.tscn" id="1_ea166"]
 [ext_resource type="PackedScene" uid="uid://djs6n1tduqryb" path="res://scenes/enemy.tscn" id="2_cc7oi"]
 [ext_resource type="PackedScene" uid="uid://plfaslbskf7s" path="res://scenes/game_manager.tscn" id="3_l8hbo"]
 [ext_resource type="PackedScene" uid="uid://bajxl10t3lfhq" path="res://scenes/game_over_screen.tscn" id="4_1d1yq"]
+[ext_resource type="PackedScene" uid="uid://b2o6gbni7c170" path="res://scenes/sword.tscn" id="4_gdlki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_op72b"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -50,7 +51,10 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3839, -2.15374)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.885337, 0.46495, 0, -0.46495, 0.885337, 0, 16.681, 23.3173)
+transform = Transform3D(1, 0, 0, 0, 0.665022, 0.746824, 0, -0.746824, 0.665022, 0, 36.2314, 23.3173)
+
+[node name="Sword" parent="Player" instance=ExtResource("4_gdlki")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.450287, 2.15374)
 
 [node name="Enemy" parent="." instance=ExtResource("2_cc7oi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.772, 1, -6.251)
